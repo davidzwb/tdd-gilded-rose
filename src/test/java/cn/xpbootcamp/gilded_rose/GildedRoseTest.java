@@ -44,4 +44,12 @@ public class GildedRoseTest {
         Product product = new Product(sellin, 10);
         assertEquals(quality / 2 / 2, product.getQualityAfterDays(sellin + 2));
     }
+
+    @Test
+    public void sulfurasQualityWontChange() {
+        float quality = 10;
+        Product product = new Sulfuras(quality);
+        assertEquals(quality, product.getQualityAfterDays(100));
+        assertEquals(quality, product.getQualityAfterDays(0));
+    }
 }
